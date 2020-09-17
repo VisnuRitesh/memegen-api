@@ -25,7 +25,6 @@ class Memegen():
                 continue
 
             top, bottom = segments
-            top, bottom = correct_spelling(top), correct_spelling(bottom)
 
             # Generate and return a meme image
             return generate_meme(top, bottom, self.template.value), top, bottom

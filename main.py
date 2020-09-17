@@ -18,9 +18,11 @@ app.add_middleware(
 )
 
 
-@app.get("/meme/{template_id}")
-async def root(template_id: MemeTemplate):
-    generator = Memegen(template=MemeTemplate.DRAKE)
+@app.get("/meme/{template_id}/{temperature}")
+async def root(template_id: MemeTemplate, temperature: int = 50):
+    generator = Memegen(
+        template=MemeTemplate.DRAKE,
+        temperature=temperature / 100)
     meme, top, bottom = generator.predict()
 
     return {
