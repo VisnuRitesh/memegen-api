@@ -32,3 +32,9 @@ The API response had the following format:
   "image": base 64 image
 }
 ```
+
+### Running with HTTPS
+
+If you want to run the API on HTTPS (and use a custom domain) run it with `docker-compose up --build`
+
+Before running `docker-compose` update the variables `YOUR_EMAIL` and `YOUR_DOMAIN` in `docker-compose.yml`
